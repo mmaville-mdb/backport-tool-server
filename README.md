@@ -89,6 +89,11 @@ View pull request: https://github.com/10gen/docs-mongodb-internal/pull/7872
 
 4. Manually edit the PR description, adding a link to the build log so others can verify there are no residual build errors.
 
+```
+## Build Log
+https://workerpool-boxgs.mongodbstitch.com/pages/job.html?collName=queue&jobId=665dfa69cf5bec1c2905c3b3
+```
+
 ## Troubleshooting
 
 Some issues you might run into when the sailing isn't so smooth.
