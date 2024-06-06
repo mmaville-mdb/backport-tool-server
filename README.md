@@ -1,17 +1,18 @@
 # backport-tool-server
+
 Contains instructions and configuration for the Server Docs team backport tool.
 
-## Set-up
+## Setup
 
-### Install the Backport command-line tool
+### 1. Install the Backport command-line tool
 
 ```
 npm install backport
 ```
 
-### Configure a GitHub access token
+### 2. Configure a GitHub access token
 
-Add personal access token to [global config](/docs/config-file-options.md#global-config-backportconfigjson):
+Add personal access token to [global config](https://github.com/sorenlouv/backport/blob/main/docs/config-file-options.md#global-config-backportconfigjson):
 
 ```js
 // ~/.backport/config.json
@@ -20,12 +21,24 @@ Add personal access token to [global config](/docs/config-file-options.md#global
 }
 ```
 
+Access tokens can be created here: https://github.com/settings/tokens
+
+Please select the necessary access scopes:
+
+**For public and private repos (recommended)**
+![image](https://user-images.githubusercontent.com/209966/67081197-fe93d380-f196-11e9-8891-c6ba8c4686a4.png)
+
+<img width="971" alt="image" src="https://user-images.githubusercontent.com/7416358/226398066-54cd918e-7d5a-420b-9f84-bb34f9f43dd6.png">
+
 ## Use
+
+1. Pull the latest changes for `master`.
 
 ```
 docs-mongodb-internal git:(master) ✗ git pull
 ```
-Select the commit you want to backport:
+
+2. Select the commit you want to backport:
 
 ```
 docs-mongodb-internal git:(master) ✗ backport
@@ -39,7 +52,7 @@ repo: 10gen/docs-mongodb-internal • maxNumber: 15
   5. DOCSP-39985 fixing snapshot 404 (#7855)
 ```
 
-Select the branch(es) you want to backport to:
+3. Select the branch(es) you want to backport to:
 
 ```
 ? Select branch (Press <space> to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)
@@ -74,4 +87,36 @@ Backporting to v5.0:
 View pull request: https://github.com/10gen/docs-mongodb-internal/pull/7872
 ```
 
-Manually edit the PR description to add a link to the build log so that the person on merge duty can verify there are no residual errors.
+4. Manually edit the PR description, adding a link to the build log so others can verify there are no residual build errors.
+
+## Troubleshooting
+
+Some issues you might run into when the sailing isn't so smooth.
+
+### Merge conflict during cherry-pick
+
+You must resolve all merge conflicts in the temp backport repo and stage the changes before resuming backporting.
+
+```
+Backporting to v5.0:
+✔ Pulling latest changes
+x Cherry-picking: DOCSP-39616-push-aggregation-missing-behavior (#7857)
+
+The commit could not be backported due to conflicts
+
+Please fix the conflicts in /Users/mattmaville/.backport/repositories/10gen/docs-mongodb-internal
+? Fix the following conflicts manually:
+
+
+Unstaged files:
+ - /Users/mattmaville/.backport/repositories/10gen/docs-mongodb-internal/config/changelog_conf.yaml
+
+Press ENTER when the conflicts are resolved and files are staged
+```
+
+### VSCode does not open automatically
+
+**Solution**: Set VSCode as the default editor for all relevant filetypes on your OS.
+
+You can also resolve merge conflicts by hand and stage the changes before resuming the script. Use the file refs provided by the script to ensure you're working on the temporary backport repo and not your local source repo.
+
