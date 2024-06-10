@@ -32,6 +32,13 @@ Add the personal access token to [global config](https://github.com/sorenlouv/ba
 }
 ```
 
+**Configure your token with SSO**
+
+On the https://github.com/settings/tokens screen, click `Configure SSO`, then click `Authorize` and `Continue` twice to authorize the token for SSO. Do this for both `10gen` and `mongodb` orgs:
+
+![Screenshot 2024-06-10 at 10 58 15 AM](https://github.com/mmaville-mdb/backport-tool-server/assets/85948430/27c092dc-bec3-4c53-8228-86f5dd4ee576)
+
+
 ## Use
 
 1. Pull the latest changes for `master`.
