@@ -12,14 +12,7 @@ npm install backport
 
 ### 2. Configure a GitHub access token
 
-Add personal access token to [global config](https://github.com/sorenlouv/backport/blob/main/docs/config-file-options.md#global-config-backportconfigjson):
-
-```js
-// ~/.backport/config.json
-{
-  "accessToken": "ghp_very_secret"
-}
-```
+During installation backport will create an empty configuration file in `/Users/<username>/.backport/config.json`. You must update this file with a Github Access Token.
 
 Access tokens can be created here: https://github.com/settings/tokens
 
@@ -29,6 +22,15 @@ Please select the necessary access scopes:
 ![image](https://user-images.githubusercontent.com/209966/67081197-fe93d380-f196-11e9-8891-c6ba8c4686a4.png)
 
 <img width="971" alt="image" src="https://user-images.githubusercontent.com/7416358/226398066-54cd918e-7d5a-420b-9f84-bb34f9f43dd6.png">
+
+Add the personal access token to [global config](https://github.com/sorenlouv/backport/blob/main/docs/config-file-options.md#global-config-backportconfigjson):
+
+```js
+// ~/.backport/config.json
+{
+  "accessToken": "ghp_very_secret"
+}
+```
 
 ## Use
 
@@ -124,4 +126,3 @@ Press ENTER when the conflicts are resolved and files are staged
 **Solution**: Set VSCode as the default editor for all relevant filetypes on your OS.
 
 You can also resolve merge conflicts by hand and stage the changes before resuming the script. Use the file refs provided by the script to ensure you're working on the temporary backport repo and not your local source repo.
-
