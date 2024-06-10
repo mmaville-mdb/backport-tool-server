@@ -55,8 +55,8 @@ repo: 10gen/docs-mongodb-internal • maxNumber: 15
 ```
 
 
-> [!IMPORTANT]  
-> If you get an error when running the `backport` command from terminal, try to install the cli with `npm install -g backport`.
+ > [!IMPORTANT]  
+ > If you get an error when running the `backport` command from terminal, try to install the cli with `npm install -g backport`.
 
 
 3. Select the branch(es) you want to backport to:
