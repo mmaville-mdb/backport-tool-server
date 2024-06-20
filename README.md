@@ -108,6 +108,10 @@ View pull request: https://github.com/10gen/docs-mongodb-internal/pull/7872
 https://workerpool-boxgs.mongodbstitch.com/pages/job.html?collName=queue&jobId=665dfa69cf5bec1c2905c3b3
 ```
 
+## Limitations
+
+- PR headings cannot contain spaces or certain other characters. See character considerations in [item #4](https://git-scm.com/docs/git-check-ref-format#_description).
+
 ## Troubleshooting
 
 Some issues you might run into when the sailing isn't so smooth.

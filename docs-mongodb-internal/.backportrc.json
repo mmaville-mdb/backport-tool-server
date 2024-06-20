@@ -4,8 +4,6 @@
 
   "targetBranchChoices": ["master", "v7.3", "v7.0", "v6.0", "v5.0"],
 
-  "author": null,
-
   "editor": "code",
 
   "maxNumber": 15,
